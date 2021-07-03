@@ -3,9 +3,14 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Display from '../Container/Display/display';
 import WritingSpace from '../Container/WritingSpace/writingSpace';
+import Timer from '../Container/Timer/timer';
 
 const useStyle = makeStyles(() =>
   createStyles({
+    timer: {
+      gridRow: 2,
+      gridColumn: 2
+    },
     display: {
       gridRow: 4,
       gridColumn: 2
@@ -26,6 +31,9 @@ const Chat: React.FC = () => {
   const styles = useStyle();
   return (
     <>
+      <Box className={styles.timer}>
+        <Timer />
+      </Box>
       <Box className={styles.display}>
         <Display />
       </Box>
