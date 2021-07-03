@@ -24,4 +24,4 @@ yarn-error.log*
 
 #firebase
 /src/firebase
-/drawing-firebase-adminsdk.json
+drawing-firebase-adminsdk.json
