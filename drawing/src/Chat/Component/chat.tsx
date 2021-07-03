@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
+import Display from '../Container/Display/display';
 import WritingSpace from '../Container/WritingSpace/writingSpace';
 
 const useStyle = makeStyles(() =>
@@ -25,7 +26,9 @@ const Chat: React.FC = () => {
   const styles = useStyle();
   return (
     <>
-      <Box className={styles.display}></Box>
+      <Box className={styles.display}>
+        <Display />
+      </Box>
       <Box className={styles.writingSpace}>
         <WritingSpace />
       </Box>

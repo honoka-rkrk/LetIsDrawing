@@ -49,6 +49,7 @@ const WritingSpace: React.FC<WritingSpaceProps> = (props: WritingSpaceProps) => 
       {submitError ? (
         <TextField
           className={styles.input}
+          onChange={handleContentChange}
           margin='dense'
           id='message'
           label='内容'
@@ -63,6 +64,7 @@ const WritingSpace: React.FC<WritingSpaceProps> = (props: WritingSpaceProps) => 
       ) : (
         <TextField
           className={styles.input}
+          onChange={handleContentChange}
           margin='dense'
           id='message'
           label='内容'

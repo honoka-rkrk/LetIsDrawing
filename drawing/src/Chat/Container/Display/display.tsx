@@ -38,7 +38,7 @@ const Display: React.FC = () => {
       unmounted = true;
       clearTimeout(id);
     };
-  });
+  },[setMessages]);
 
   return <CompDisplay messages={messages} />;
 };

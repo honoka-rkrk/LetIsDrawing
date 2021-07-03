@@ -1,12 +1,8 @@
-import React from "react";
-import CompChat from "../Component/chat";
-
-
+import React from 'react';
+import CompChat from '../Component/chat';
 
 const Chat: React.FC = () => {
-  return (
-      <CompChat />
-  );
+  return <CompChat />;
 };
 
 export default Chat;
