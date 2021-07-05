@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 
-import InfDialog from '../../../Utils/Container/Dialog/infDialog';
+import InfDialog from '../../Utils/Container/Dialog/infDialog';
 
 const useStyle = makeStyles(() =>
   createStyles({
@@ -58,8 +58,8 @@ const Timer: React.FC<TimerProps> = (props: TimerProps) => {
       {isEnd ? (
         <InfDialog
           infOpen={isEnd}
-          title={'時間終了です'}
-          msg={'お疲れ様でした。次の画面で画像をアップロードしてください'}
+          title={'アップロード時間の終了です'}
+          msg={'お疲れ様でした。またの参加をお待ちしております。'}
           clickOK={clickOK}
         />
       ) : null}

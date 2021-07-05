@@ -2,10 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import moment, { Moment } from 'moment';
 import { useHistory } from 'react-router-dom';
 
-import CompTimer from '../../Component/Timer/timer';
+import CompTimer from '../Component/timer';
 
 const Timer: React.FC = () => {
-  const [clock, setClock] = useState<Moment | null>(null);
   const [end, setEnd] = useState<Moment | null>(null);
   const [tmMinutes, setTmMinutes] = useState<string>('');
   const [tmSeconds, setTmSeconds] = useState<string>('');
@@ -15,8 +14,8 @@ const Timer: React.FC = () => {
 
   useEffect(() => {
     const dtNow = moment().startOf('day');
-    // const endTime = dtNow.add(18, 'hours');
-    const endTime = moment().add(18, 'seconds');
+    const endHour = dtNow.add(18, 'hours');
+    const endTime = endHour.add(3, 'minutes');
     setEnd(endTime);
   }, [setEnd]);
 
@@ -29,10 +28,9 @@ const Timer: React.FC = () => {
       if (timerDiff === 0) {
         setIsEnd(true);
       }
-      if (Math.floor(timerDiff / 60) <= 5) {
+      if (Math.floor(timerDiff / 60) <= 1) {
         setDanger(true);
       }
-      setClock(dtNow);
     }
   }, [end]);
 
@@ -49,7 +47,7 @@ const Timer: React.FC = () => {
   }, [updateTime]);
 
   const clickOK = useCallback(() => {
-    history.push('/upload');
+    history.push('/');
   }, []);
 
   return (
